@@ -1,0 +1,374 @@
+/* ====================
+* Global Styles
+==================== */
+/* 
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #777777;
+  background: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Jost', sans-serif;
+  color: #222222;
+}
+
+a {
+  color: #13357B;
+  text-decoration: none;
+  transition: .3s;
+}
+
+a:hover {
+  color: #13357B;
+  text-decoration: underline;
+}
+
+.btn {
+  font-family: 'Jost', sans-serif;
+  transition: .3s;
+}
+
+.btn-primary {
+  background-color: #13357B;
+  border-color: #13357B;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #0c2345;
+  border-color: #0c2345;
+  box-shadow: 0 0 0 4px rgba(21, 53, 123, 0.5);
+}
+
+.rounded-pill {
+  border-radius: 30px;
+}
+
+.btn-hover-bg:hover {
+  background: #13357B;
+}
+
+.text-primary {
+  color: #13357B !important;
+}
+
+.bg-primary {
+  background-color: #13357B !important;
+}
+
+.bg-light {
+  background-color: #f4f4f4 !important;
+} */
+
+
+/* ====================
+* Spinner Styles
+==================== */
+/* #spinner {
+  background-color: #ffffff;
+} */
+
+/* ====================
+* Topbar Styles
+==================== */
+/* .container-fluid.bg-primary {
+  background-color: #13357B !important;
+}
+
+.container-fluid.bg-primary .btn-sm-square {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+}
+
+.container-fluid.bg-primary .dropdown-menu {
+  margin-top: 0;
+  border: none;
+  border-radius: 0;
+  background-color: #ffffff;
+}
+
+.container-fluid.bg-primary .dropdown-item {
+  padding: 10px 15px;
+  color: #777777;
+}
+
+.container-fluid.bg-primary .dropdown-item:hover,
+.container-fluid.bg-primary .dropdown-item:focus {
+  background-color: #f4f4f4;
+  color: #222222;
+} */
+
+/* ====================
+* Navbar Styles
+==================== */
+/* .navbar-light .navbar-nav .nav-link {
+  margin-left: 25px;
+  padding: 25px 0;
+  font-family: 'Jost', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: #222222;
+  outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: #13357B;
+}
+
+.navbar-light .navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+.navbar-light .navbar-toggler:focus {
+  box-shadow: none;
+} */
+
+/* ====================
+* Carousel Styles
+==================== */
+/* .carousel-caption {
+  text-align: left;
+  bottom: 100px;
+}
+
+.carousel-caption h4 {
+  font-size: 22px;
+  letter-spacing: 3px;
+}
+
+.carousel-caption h1 {
+  font-size: 60px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.carousel-caption p {
+  font-size: 18px;
+  line-height: 36px;
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+      font-size: 40px;
+  }
+
+  .carousel-caption p {
+      font-size: 16px;
+      line-height: 24px;
+  }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #13357B;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+} */
+
+
+/* ====================
+* Search Bar Styles
+==================== */
+/* .search-bar {
+  margin-top: 100px;
+}
+
+.search-bar input[type="text"] {
+  border: none;
+  height: 70px;
+  padding-left: 30px;
+  padding-right: 120px;
+  border-radius: 35px;
+  font-size: 18px;
+}
+
+.search-bar button {
+  top: 10px;
+  right: 10px;
+} */
+
+
+/* ====================
+* About Us Styles
+==================== */
+/* .about {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-about-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #13357B;
+  margin-bottom: 15px;
+}
+
+.section-about-title::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #13357B;
+  bottom: -10px;
+  left: 0;
+}
+
+.about .h-100 {
+  border: 50px solid;
+  border-color: transparent #13357B transparent #13357B;
+}
+
+.about .row {
+  background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.about p {
+  font-size: 18px;
+  line-height: 36px;
+}
+
+.about .btn-primary {
+  margin-top: 30px;
+} */
+
+/* ====================
+* Services Styles
+==================== */
+/* .service {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.service .section-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #13357B;
+  margin-bottom: 15px;
+}
+
+.service .section-title::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #13357B;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.service-content-inner {
+  transition: .3s;
+}
+
+.service-content-inner:hover {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+  margin-left: 30px;
+} */
+
+/* ====================
+* Destination Styles
+==================== */
+/* .destination {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.destination .section-title {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #13357B;
+  margin-bottom: 15px;
+}
+
+.destination .section-title::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 3px;
+  background-color: #13357B;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.destination .nav-pills .nav-item .nav-link {
+  border-radius: 30px;
+  padding: 15px;
+  font-size: 18px;
+  font-family: 'Jost', sans-serif;
+  color: #222222;
+  background-color: #f4f4f4;
+  margin: 0 10px;
+  transition: .3s;
+}
+
+.destination .nav-pills .nav-item .nav-link:hover,
+.destination .nav-pills .nav-item .nav-link.active {
+  background-color: #13357B;
+  color: #ffffff;
+}
+
+.destination .tab-content {
+  margin-top: 30px;
+} */
+
+
+
+/* ====================
+* Custom Styles (From User)
+==================== */
+
+
+/* .btn-primary.rounded-pill {
+  
+  border-radius: 30px;
+  font-weight: bold;
+} */
+
+/* .search-bar input[type="text"] {
+  border: 1px solid #ccc;
+} */

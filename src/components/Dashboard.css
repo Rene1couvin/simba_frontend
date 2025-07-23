@@ -1,0 +1,44 @@
+/* Dashboard.module.css */
+
+.dashboardContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+	background-color: #f4f4f4;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	margin: 20px;
+  }
+  
+  .dashboardTitle {
+	color: #333;
+	margin-bottom: 20px;
+	font-size: 2em;
+  }
+  
+  .welcomeMessage {
+	color: #555;
+	font-size: 1.2em;
+	margin-bottom: 15px;
+  }
+  
+  .logoutButton {
+	padding: 10px 20px;
+	background-color: #922a34; /* Red color for logout */
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1em;
+	transition: background-color 0.3s ease;
+  }
+  
+  .logoutButton:hover {
+	background-color: #44191d;
+  }
+  
+  .loadingMessage {
+	color: #777;
+	font-style: italic;
+  }

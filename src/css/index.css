@@ -1,0 +1,414 @@
+src/index.css or src/App.css
+
+:root {
+  --primary-color: #e09433; /* A warm orange for adventure */
+  --secondary-color: #3f51b5; /* A deep blue */
+  --text-color: #333;
+  --light-bg: #f9f9f9;
+  --dark-bg: #222;
+}
+
+/* Base styles for all devices */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  line-height: 1.6; /* Improve readability */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background-color: var(--dark-bg);
+  color: white;
+  padding: 15px 0;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  padding: 0 20px; /* Add horizontal padding for header content */
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-decoration: none;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap; /* Prevent navigation links from breaking */
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero-section {
+  background: url('https://via.placeholder.com/1500x600/e09433/ffffff?text=Simba+Adventure+Banner') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px; /* Slightly reduced padding for better mobile fit */
+  min-height: 400px; /* Adjusted min-height for smaller screens */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section h1 {
+  font-size: 2.5em; /* Adjusted for smaller screens */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  max-width: 90%; /* Prevent text overflow */
+}
+
+.hero-section p {
+  font-size: 1.1em; /* Adjusted for smaller screens */
+  margin-bottom: 30px;
+  max-width: 700px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 25px; /* Slightly smaller button for mobile */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em; /* Adjusted font size */
+  transition: background-color 0.3s ease;
+  display: inline-block; /* Ensure padding works correctly */
+}
+
+.btn-primary:hover {
+  background-color: #c77e2d; /* Slightly darker */
+}
+
+/* Section Common Styles */
+.section {
+  padding: 40px 0; /* Reduced padding for smaller screens */
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2em; /* Adjusted for smaller screens */
+  margin-bottom: 30px; /* Adjusted margin */
+  color: var(--secondary-color);
+}
+
+/* About Us */
+.about-us {
+  background-color: var(--light-bg);
+}
+
+/* Adventures */
+.adventures-section {
+  background-color: white;
+}
+
+.adventure-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjusted gap for better spacing */
+  margin-top: 30px;
+}
+
+.adventure-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%; /* Full width on small screens */
+  max-width: 320px; /* Limit card width on larger screens */
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.adventure-card:hover {
+  transform: translateY(-5px);
+}
+
+.adventure-card img {
+  width: 100%;
+  height: 180px; /* Slightly reduced height for mobile */
+  object-fit: cover;
+}
+
+.adventure-card-content {
+  padding: 15px; /* Adjusted padding */
+}
+
+.adventure-card h3 {
+  font-size: 1.3em; /* Adjusted font size */
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.adventure-card p {
+  font-size: 0.85em; /* Adjusted font size */
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Testimonials */
+.testimonials-section {
+  background-color: var(--light-bg);
+}
+
+.testimonial-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjusted gap */
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px; /* Adjusted padding */
+  width: 100%; /* Full width on small screens */
+  max-width: 300px; /* Limit card width on larger screens */
+  text-align: center;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  margin-bottom: 10px; /* Adjusted margin */
+  color: #666;
+  font-size: 0.9em; /* Adjusted font size */
+}
+
+.testimonial-card .author {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 0.95em;
+}
+
+/* Call To Action */
+.call-to-action {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 50px 20px; /* Adjusted padding */
+}
+
+.call-to-action h2 {
+  color: white;
+  font-size: 2em; /* Adjusted font size */
+  margin-bottom: 20px;
+}
+
+.call-to-action p {
+  font-size: 1em; /* Adjusted font size */
+  margin-bottom: 25px;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-bg);
+  color: white;
+  padding: 30px 0; /* Adjusted padding */
+  text-align: center;
+}
+
+.footer-links {
+  margin-top: 10px; /* Added margin for separation */
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 8px; /* Adjusted margin */
+  transition: color 0.3s ease;
+  font-size: 0.9em; /* Adjusted font size */
+  white-space: nowrap; /* Prevent links from breaking */
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+/*
+--- Media Queries for Responsiveness ---
+*/
+
+/* Small Phones (up to 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 15px; /* Reduce padding for very small screens */
+  }
+
+  .header-content {
+    flex-direction: column; /* Stack logo and nav links */
+    align-items: flex-start; /* Align to start */
+    gap: 15px; /* Space between stacked items */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap; /* Allow nav links to wrap */
+    justify-content: center; /* Center nav links if they wrap */
+    width: 100%; /* Take full width */
+    margin-top: 10px;
+  }
+
+  .nav-links a {
+    margin: 5px 10px; /* Adjust spacing for stacked links */
+  }
+
+  .logo {
+    font-size: 1.8em; /* Slightly smaller logo */
+  }
+
+  .hero-section {
+    padding: 60px 15px; /* More padding for hero section */
+    min-height: 350px;
+  }
+
+  .hero-section h1 {
+    font-size: 2em; /* Smaller hero title */
+  }
+
+  .hero-section p {
+    font-size: 1em; /* Smaller hero paragraph */
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .section {
+    padding: 30px 0; /* Further reduced section padding */
+  }
+
+  .section h2 {
+    font-size: 1.8em; /* Smaller section titles */
+  }
+
+  .adventure-card,
+  .testimonial-card {
+    max-width: 90%; /* Allow cards to take more width but prevent full stretch on very small screens */
+    margin: 0 auto; /* Center single cards */
+  }
+
+  .call-to-action h2 {
+    font-size: 1.8em;
+  }
+
+  .call-to-action p {
+    font-size: 0.95em;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column; /* Stack footer links */
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+/* Tablets and larger phones (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container {
+    padding: 25px;
+  }
+
+  .header-content {
+    flex-wrap: wrap; /* Allow wrap for header on tablets */
+    justify-content: center; /* Center header items if wrapped */
+    gap: 15px;
+  }
+
+  .nav-links {
+    margin-top: 10px; /* Add some space if header wraps */
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    margin: 0 15px; /* Adjust spacing */
+  }
+
+  .hero-section {
+    padding: 90px 20px;
+    min-height: 450px;
+  }
+
+  .hero-section h1 {
+    font-size: 3em;
+  }
+
+  .hero-section p {
+    font-size: 1.3em;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  .section h2 {
+    font-size: 2.2em;
+  }
+
+  .adventure-card {
+    width: calc(50% - 30px); /* Two cards per row with gap */
+    max-width: 350px; /* Max width to prevent overly wide cards */
+  }
+
+  .testimonial-card {
+    width: calc(50% - 30px); /* Two cards per row with gap */
+    max-width: 350px;
+  }
+}
+
+/* Small to Medium Computers (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 30px;
+  }
+
+  .hero-section h1 {
+    font-size: 3.2em;
+  }
+
+  .hero-section p {
+    font-size: 1.4em;
+  }
+
+  .section h2 {
+    font-size: 2.4em;
+  }
+
+  .adventure-card {
+    width: calc(33.33% - 20px); /* Three cards per row, adjusting for gap */
+  }
+
+  .testimonial-card {
+    width: calc(33.33% - 20px);
+  }
+}
+
+/* Large Screens (1025px and up) - Base styles already handle these well */
+/* No specific media queries needed here, as the base styles are optimized for larger screens */
