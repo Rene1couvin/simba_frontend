@@ -3,10 +3,10 @@ import React from "react";
 const articles = [
   {
     id: 1,
-    title: "Top 5 Must-Visit Safari Destinations",
+    title: "Top 5 Must-Visit SIMBA Destinations",
     image: "https://placehold.co/300x200?text=Safari+Destinations",
     excerpt:
-      "Discover the most breathtaking safari spots in Africa for unforgettable wildlife experiences.",
+      "Discover the most breathtaking Simba spots in Rwanda for unforgettable wildlife experiences.",
     link: "/blog/top-safari-destinations",
   },
   {
@@ -60,27 +60,40 @@ const BlogPreview = () => {
       </div>
 
       <style>{`
+        /* --- Color variables for the new brand palette --- */
+        :root {
+          --pine-green: #2E7D32;
+          --fern-green: #4CAF50;
+          --sky-blue: #64B5F6;
+          --sunlight-gold: #FFD54F;
+          --misty-green: #E8F5E9;
+          --stone-gray: #F5F5F5;
+          --earth-brown: #5D4037;
+          --warm-amber: #FFB300;
+          --moss-glow: #A5D6A7;
+          --dark-forest: #1B5E20;
+          --charcoal-gray: #424242;
+          --white: #FFFFFF;
+        }
+
         .blog-preview {
-          padding: 3rem 1rem;
-          background-color: #f9fafb;
+          padding: 2rem 1rem;
+          background-color: var(--misty-green);
         }
 
         .container {
           max-width: 1200px;
           margin: 0 auto;
+          
         }
 
         .section-title {
           font-size: 2rem;
           font-weight: 700;
-          margin-bottom: 1.5rem;
-          color: #1f2937;
+          margin-bottom: 8rem;
+          color: var(--dark-forest);
           text-align: center;
-        }
-
-        .blog-preview {
-          padding: 3rem 1rem;
-          background-color: #fff4e6; /* warm beige background */
+          padding-
         }
 
         /* Carousel styles */
@@ -96,19 +109,19 @@ const BlogPreview = () => {
         }
 
         .carousel::-webkit-scrollbar {
-          height: 8px;
+          height: 9px;
         }
         .carousel::-webkit-scrollbar-thumb {
-          background: #f97316;
+          background: var(--warm-amber);
           border-radius: 4px;
         }
         .carousel::-webkit-scrollbar-track {
-          background: #f3f4f6;
+          background: var(--stone-gray);
         }
 
         /* Blog card */
         .blog-card {
-          background: #fff;
+          background: var(--blue);
           border-radius: 0.5rem;
           box-shadow: 0 4px 12px rgba(0,0,0,0.08);
           scroll-snap-align: start;
@@ -135,14 +148,14 @@ const BlogPreview = () => {
         .blog-title {
           font-size: 1.25rem;
           font-weight: 700;
-          color: #1f2937;
+          color: var(--dark-forest);
           margin-bottom: 0.5rem;
           flex-shrink: 0;
         }
 
         .blog-excerpt {
           font-size: 1rem;
-          color: #4b5563;
+          color: var(--charcoal-gray);
           line-height: 1.5;
           margin-bottom: 1rem;
           flex-grow: 1;
@@ -150,7 +163,7 @@ const BlogPreview = () => {
 
         .read-more {
           font-weight: 600;
-          color: #f97316;
+          color: var(--sunlight-gold);
           text-decoration: none;
           align-self: flex-start;
           transition: color 0.2s ease;
@@ -158,7 +171,7 @@ const BlogPreview = () => {
         .read-more:hover,
         .read-more:focus {
           text-decoration: underline;
-          color: #ea580c;
+          color: var(--pine-green);
         }
 
         /* Responsive adjustments */

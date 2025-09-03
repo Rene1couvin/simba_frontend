@@ -3,7 +3,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext'; // Import AuthProvider
 import Login from './components/Login'; // Your Login/Signup component
-import Home from './HomePage';
+import About from './homepages/AboutUs';
+import HomePage from './HomePage';
 import Dashboard from './components/Dashboard';
 import AllAdventuresPage from './homepages/AllAdventuresPage';
 import AdventuresCard from './homepages/AdventureCard';
@@ -25,12 +26,22 @@ const App = () => {
           
           <main className="app-main-content"> {/* This will be the flexible content area */}
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/About" element={<About />} />
               <Route path="/privacy" element={<Privacy />} />
+              {/* <Route path="/privacy" element={<Privacy />} /> */}
               <Route path="/terms" element={<Terms />} />
               <Route path="/AllAdventuresPage" element={<AllAdventuresPage />} />
               <Route path="/AdventureCard" element={<AdventuresCard />} />
+              <Route 
+                path="/dashboardd" 
+                element={
+                  
+                    <Dashboard />
+                  
+                } 
+              />
 
               {/* Protected Routes: Wrap components that require authentication */}
               <Route 

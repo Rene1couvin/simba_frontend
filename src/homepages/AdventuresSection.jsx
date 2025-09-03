@@ -34,30 +34,37 @@ const FeaturedAdventuresSection = () => {
 
   return (
     <>
-      {/* Reusing the same CSS styles from AllAdventuresPage.
-          In a real app, these would be in a shared CSS file! */}
+      {/*
+        Reusing the same CSS styles from AllAdventuresPage, updated with the new
+        color palette variables. In a real application, these would be in a
+        shared global stylesheet for consistency.
+      */}
       <style>{`
-        /* CSS styles identical to AllAdventuresPage for consistency */
-        /* You would typically extract these into a global stylesheet (e.g., App.css) */
+        /* --- Color variables for the new brand palette --- */
         :root {
-          --primary-color: orange;
-          --primary-dark: #ff8c00;
-          --text-color: #333;
-          --light-bg: #f9f9f9;
-          --card-bg: #fff;
-          --shadow-light: rgba(0, 0, 0, 0.08);
-          --shadow-medium: rgba(0, 0, 0, 0.15);
+          --pine-green: #2E7D32;
+          --fern-green: #4CAF50;
+          --sky-blue: #64B5F6;
+          --sunlight-gold: #FFD54F;
+          --misty-green: #E8F5E9;
+          --stone-gray: #F5F5F5;
+          --earth-brown: #5D4037;
+          --warm-amber: #FFB300;
+          --moss-glow: #A5D6A7;
+          --dark-forest: #1B5E20;
+          --charcoal-gray: #424242;
+          --white: #FFFFFF;
         }
 
         .adventures-section {
           padding: 80px 0;
-          background-color: var(--light-bg);
+          background-color: var(--misty-green);
           text-align: center;
         }
 
         .adventures-section h2 {
           font-size: 2.8em;
-          color: var(--text-color);
+          color: var(--charcoal-gray);
           margin-bottom: 50px;
           position: relative;
           display: inline-block;
@@ -71,7 +78,7 @@ const FeaturedAdventuresSection = () => {
           transform: translateX(-50%);
           width: 80px;
           height: 4px;
-          background-color: var(--primary-color);
+          background-color: var(--pine-green);
           border-radius: 2px;
         }
 
@@ -89,9 +96,9 @@ const FeaturedAdventuresSection = () => {
         }
 
         .adventure-card {
-          background-color: var(--card-bg);
+          background-color: var(--white);
           border-radius: 12px;
-          box-shadow: 0 8px 25px var(--shadow-light);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
           overflow: hidden;
           display: flex;
           flex-direction: column;
@@ -100,14 +107,14 @@ const FeaturedAdventuresSection = () => {
 
         .adventure-card:hover {
           transform: translateY(-8px);
-          box-shadow: 0 12px 35px var(--shadow-medium);
+          box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
         }
 
         .adventure-card-image {
           width: 100%;
           height: 200px;
           object-fit: cover;
-          border-bottom: 3px solid var(--primary-color);
+          border-bottom: 3px solid var(--pine-green);
         }
 
         .adventure-card-content {
@@ -120,21 +127,21 @@ const FeaturedAdventuresSection = () => {
 
         .adventure-card-content h3 {
           font-size: 1.6em;
-          color: var(--text-color);
+          color: var(--charcoal-gray);
           margin-bottom: 10px;
         }
 
         .adventure-card-content p {
           font-size: 1em;
-          color: #666;
+          color: var(--charcoal-gray);
           line-height: 1.6;
           margin-bottom: 20px;
           flex-grow: 1;
         }
 
         .btn-primary {
-          background-color: var(--primary-color);
-          color: #fff;
+          background-color: var(--pine-green);
+          color: var(--white);
           padding: 12px 25px;
           border: none;
           border-radius: 6px;
@@ -146,7 +153,7 @@ const FeaturedAdventuresSection = () => {
         }
 
         .btn-primary:hover {
-          background-color: var(--primary-dark);
+          background-color: var(--fern-green);
           transform: translateY(-2px);
         }
 

@@ -6,7 +6,7 @@ import AboutUs from '../src/homepages/AboutUs';
 import AdventuresSection from '../src/homepages/AdventuresSection';
 import Testimonials from '../src/homepages/Testimonials';
 import CallToAction from '../src/homepages/CallToAction';
-import Footer from '../src/homepages/Footer';
+// import Footer from '../src/homepages/Footer';
 
 const HomePage = () => {
   return (

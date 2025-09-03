@@ -36,9 +36,25 @@ const Testimonials = () => {
 
       <style>
         {`
+        /* --- Color variables for the new brand palette --- */
+        :root {
+          --pine-green: #2E7D32;
+          --fern-green: #4CAF50;
+          --sky-blue: #64B5F6;
+          --sunlight-gold: #FFD54F;
+          --misty-green: #E8F5E9;
+          --stone-gray: #F5F5F5;
+          --earth-brown: #5D4037;
+          --warm-amber: #FFB300;
+          --moss-glow: #A5D6A7;
+          --dark-forest: #1B5E20;
+          --charcoal-gray: #424242;
+          --white: #FFFFFF;
+        }
+
         .testimonials-section {
           padding: 4rem 1rem;
-          background-color: #ffedd5; /* stronger warm peachy background */
+          background-color: var(--misty-green);
         }
 
         .section-title {
@@ -46,7 +62,7 @@ const Testimonials = () => {
           font-size: 2.2rem;
           font-weight: 700;
           margin-bottom: 2.5rem;
-          color: #1f2937;
+          color: var(--dark-forest);
         }
 
         .testimonial-cards {
@@ -58,7 +74,7 @@ const Testimonials = () => {
         }
 
         .testimonial-card {
-          background: #ffffff;
+          background: var(--white);
           border-radius: 0.5rem;
           padding: 1.5rem;
           box-shadow: 0 6px 14px rgba(0,0,0,0.12);
@@ -76,14 +92,14 @@ const Testimonials = () => {
         .quote {
           font-size: 1.1rem;
           line-height: 1.7;
-          color: #374151;
+          color: var(--charcoal-gray);
           margin-bottom: 1rem;
         }
 
         .author {
           text-align: right;
           font-weight: 600;
-          color: #f97316;
+          color: var(--sunlight-gold);
           font-size: 1rem;
         }
 

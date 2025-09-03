@@ -1,30 +1,39 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useAuth } from '../contexts/AuthContext'; // <--- Import useAuth hook
+import { useAuth } from "../contexts/AuthContext"; // <--- Import useAuth hook
 
 const API_BASE_URL = "http://127.0.0.1:8000/api";
 
 const loginUser = async (usernameOrEmail, password) => {
   try {
     // Change the endpoint to your JWT token obtain pair endpoint
-    const response = await axios.post(`${API_BASE_URL}/token/`, { // Corrected URL
+    const response = await axios.post(`${API_BASE_URL}/token/`, {
+      // Corrected URL
       username: usernameOrEmail,
       password,
     });
 
     if (response.status === 200 && response.data.access) {
       console.log("Login successful:", response.data);
-      localStorage.setItem('accessToken', response.data.access);
-      localStorage.setItem('refreshToken', response.data.refresh);
+      localStorage.setItem("accessToken", response.data.access);
+      localStorage.setItem("refreshToken", response.data.refresh);
       // Assuming your token endpoint returns access, refresh, and potentially user info
-      return { success: true, data: response.data, accessToken: response.data.access };
+      return {
+        success: true,
+        data: response.data,
+        accessToken: response.data.access,
+      };
     } else {
       return { success: false, message: "Unexpected login response" };
     }
   } catch (error) {
-    console.error("Login API call error:", error.response?.data || error.message);
-    const errorMessage = error.response?.data?.detail ||
+    console.error(
+      "Login API call error:",
+      error.response?.data || error.message
+    );
+    const errorMessage =
+      error.response?.data?.detail ||
       error.response?.data?.username?.[0] ||
       error.response?.data?.password?.[0] ||
       error.message;
@@ -36,7 +45,8 @@ const loginUser = async (usernameOrEmail, password) => {
 const fetchUserProfile = async (accessToken) => {
   try {
     // Adjust this URL to your profile endpoint, commonly '/users/me/' for the authenticated user
-    const response = await axios.get(`${API_BASE_URL}/users/me/`, { // Adjusted URL for current user profile
+    const response = await axios.get(`${API_BASE_URL}/users/me/`, {
+      // Adjusted URL for current user profile
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -51,10 +61,10 @@ const fetchUserProfile = async (accessToken) => {
   }
 };
 
-
 const registerUser = async (username, email, password) => {
   try {
-    const response = await axios.post(`${API_BASE_URL}/register/`, { // Corrected URL based on urls.py
+    const response = await axios.post(`${API_BASE_URL}/register/`, {
+      // Corrected URL based on urls.py
       username,
       email,
       password,
@@ -67,8 +77,12 @@ const registerUser = async (username, email, password) => {
       return { success: false, message: "Unexpected registration response" };
     }
   } catch (error) {
-    console.error("Registration API call error:", error.response?.data || error.message);
-    const errorMessage = error.response?.data?.username?.[0] ||
+    console.error(
+      "Registration API call error:",
+      error.response?.data || error.message
+    );
+    const errorMessage =
+      error.response?.data?.username?.[0] ||
       error.response?.data?.email?.[0] ||
       error.response?.data?.password?.[0] ||
       error.response?.data?.non_field_errors?.[0] ||
@@ -122,7 +136,9 @@ const LoginSignup = () => {
     idleTimer.current = setTimeout(() => {
       setShowIdlePrompt(false);
       navigate("/");
-      setModalMessage("You were inactive for too long and have been redirected to the homepage.");
+      setModalMessage(
+        "You were inactive for too long and have been redirected to the homepage."
+      );
       setShowModal(true);
     }, idleTimeout);
   }, [navigate, idleTimeout, promptTimeout]);
@@ -134,11 +150,15 @@ const LoginSignup = () => {
       resetIdleTimer();
     };
 
-    events.forEach((event) => window.addEventListener(event, handleUserActivity));
+    events.forEach((event) =>
+      window.addEventListener(event, handleUserActivity)
+    );
     resetIdleTimer();
 
     return () => {
-      events.forEach((event) => window.removeEventListener(event, handleUserActivity));
+      events.forEach((event) =>
+        window.removeEventListener(event, handleUserActivity)
+      );
       clearTimeout(idleTimer.current);
       clearTimeout(promptTimer.current);
     };
@@ -187,13 +207,18 @@ const LoginSignup = () => {
         navigate("/dashboard");
       } else {
         // If profile fetch fails, treat as login failure or handle specifically
-        setSignInErrorMessage(profileResult.message || "Login successful but failed to fetch user profile.");
+        setSignInErrorMessage(
+          profileResult.message ||
+            "Login successful but failed to fetch user profile."
+        );
         // Optionally, you might want to clear tokens if profile fetch consistently fails
-        localStorage.removeItem('accessToken');
-        localStorage.removeItem('refreshToken');
+        localStorage.removeItem("accessToken");
+        localStorage.removeItem("refreshToken");
       }
     } else {
-      setSignInErrorMessage(loginResult.message || "Login failed. Please check your credentials.");
+      setSignInErrorMessage(
+        loginResult.message || "Login failed. Please check your credentials."
+      );
     }
     setIsLoading(false);
   };
@@ -204,11 +229,7 @@ const LoginSignup = () => {
     setIsLoading(true);
     resetIdleTimer();
 
-    const result = await registerUser(
-      signUpName,
-      signUpEmail,
-      signUpPassword
-    );
+    const result = await registerUser(signUpName, signUpEmail, signUpPassword);
     if (result.success) {
       setModalMessage("Registration successful! You can now sign in.");
       setShowModal(true);
@@ -217,7 +238,9 @@ const LoginSignup = () => {
       setSignUpEmail("");
       setSignUpPassword("");
     } else {
-      setSignUpErrorMessage(result.message || "Registration failed. Please try again.");
+      setSignUpErrorMessage(
+        result.message || "Registration failed. Please try again."
+      );
     }
     setIsLoading(false);
   };
@@ -244,13 +267,13 @@ const LoginSignup = () => {
           /* --- Main Container Styles (ONLY for the form component) --- */
           
           .login-signup-container {
-            background-color: #fff;
+            // background-color: #fff;
             border-radius: 30px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
             position: relative;
             overflow: hidden;
             width: 768px; /* Base width */
-            max-width: 90%; /* Default max-width for most desktops */
+            max-width: 60%; /* Default max-width for most desktops */
             min-height: 480px;
             transition: all 0.6s ease-in-out;
             display: flex; /* Ensure flex is applied here for desktop layout */
@@ -359,8 +382,8 @@ const LoginSignup = () => {
           /* --- Error message styling --- */
           .error-message {
             color: red;
-            font-size: 12px;
-            margin-top: 5px;
+            font-size: 6px;
+            margin-top: 1px;
             text-align: center;
           }
 
@@ -457,7 +480,7 @@ const LoginSignup = () => {
             transform: translateX(0);
             transition: all 0.6s ease-in-out;
             display: flex;
-            background: linear-gradient(to right, orange, #ff8c00);
+            // background: linear-gradient(to right, orange, #ff8c00);
           }
 
           .login-signup-container.active .toggle {
@@ -824,9 +847,30 @@ const LoginSignup = () => {
               required
               aria-label="Password"
             />
-            {signUpErrorMessage && (
-              <p className="error-message">{signUpErrorMessage}</p>
-            )}
+
+            <div class="form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="consent"
+                name="consent"
+                required
+              />
+              <label class="form-check-label" for="consent">
+                I consent to a credit check and agree to the{" "}
+                <a href="/terms" class="text-decoration-none">
+                  Terms
+                </a>{" "}
+                and{" "}
+                <a href="/terms" class="text-decoration-none">
+                  Conditions
+                </a>
+                .
+              </label>
+              {signUpErrorMessage && (
+                <p className="error-message">{signUpErrorMessage}</p>
+              )}
+            </div>
             <button type="submit" disabled={isLoading}>
               {isLoading ? "Signing Up..." : "Sign Up"}
             </button>
@@ -878,7 +922,7 @@ const LoginSignup = () => {
         <div className="toggle-container">
           <div
             className="toggle"
-            style={{ background: 'linear-gradient(to right, orange, #ff8c00)' }}
+            // style={{ background: 'linear-gradient(to right, orange, #ff8c00)' }}
           >
             <div className="toggle-panel toggle-left">
               <h1>Welcome Back!</h1>
@@ -890,6 +934,7 @@ const LoginSignup = () => {
             <div className="toggle-panel toggle-right">
               <h1>Welcome, Friend!</h1>
               <p>Enter your personal details to use all of site features</p>
+
               <button
                 className="hidden"
                 id="register"
@@ -915,10 +960,18 @@ const LoginSignup = () => {
           <div className="modal-overlay">
             <div className="modal-content">
               <h2>Are you still there?</h2>
-              <p>You've been inactive for a while. You will be redirected to the homepage soon if no action is taken.</p>
+              <p>
+                You've been inactive for a while. You will be redirected to the
+                homepage soon if no action is taken.
+              </p>
               <div className="modal-buttons">
                 <button onClick={handleStayLoggedIn}>Stay Logged In</button>
-                <button className="secondary-button" onClick={handleGoToHomepage}>Go to Homepage</button>
+                <button
+                  className="secondary-button"
+                  onClick={handleGoToHomepage}
+                >
+                  Go to Homepage
+                </button>
               </div>
             </div>
           </div>

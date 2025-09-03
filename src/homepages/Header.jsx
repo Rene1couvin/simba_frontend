@@ -116,7 +116,7 @@ const Header = () => {
             <Link to="/">Home</Link>
             <Link to="/AllAdventuresPage">Adventures</Link>
             <Link to="/about">About Us</Link>
-            <Link to="/contact">Contact</Link>
+            {/* <Link to="/contact">Contact</Link> */}
             {/* Added Dashboard link directly in nav for easy access */}
             <Link to="/dashboard">Dashboard</Link>
           </nav>
